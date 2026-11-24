@@ -8373,6 +8373,7 @@ dependencies = [
  "dcap-qvl-webpki",
  "dstack-types",
  "hex",
+ "js-sys",
  "nom",
  "p256 0.13.2",
  "pem 3.0.6",

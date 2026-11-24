@@ -645,6 +645,9 @@ fn verify_ak_chain_with_collateral(
         intermediate_certs.len()
     );
 
+    #[cfg(target_arch = "wasm32")]
+    let now = std::time::Duration::from_millis(js_sys::Date::now() as u64);
+    #[cfg(not(target_arch = "wasm32"))]
     let now = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .context("failed to get current time")?;

@@ -39,3 +39,7 @@ pki-fetch = { workspace = true, optional = true }
 [features]
 default = ["crl-download"]
 crl-download = ["pki-fetch"]
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.2", features = ["js"] }
+js-sys = "0.3"
